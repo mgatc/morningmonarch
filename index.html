@@ -1,58 +1,69 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>The Morning Monarch</title>
-<style>
-	html {
-		margin:0;
-		padding:0;
-	}
-	body {
-		background-color:#677652;
-		width:100vw;
-		margin:16.666vh 0;
-		padding:0;
-	}
-	#composite {
-		margin:0;
-		text-align:center;
-	}
-	#composite img {
-		width:0vw;
-		position:relative;
-		left:0;
-		margin-top:6.5vw;
-		margin-left:0;
-		margin-right:0;
-		-webkit-transition:all 2s ease;
-    	-moz-transition:all 2s ease;
-    	-o-transition:all 2s ease;
-    	transition:all 2s ease;
-	}
-	#a {
-		z-index:2;
-		margin:0;
-	}
-	#b {
-		z-index:3;
-		top:0.164vw;
-	}
-	#c {
-		z-index:1;
-		top:0.43vw;
-	}
-	#d {
-		z-index:2;
-		top:0.658vw;
-	}
-</style>
+
+    <meta charset="UTF-8">
+    <title>The Morning Monarch</title>
+    
+    <!--FACEBOOK OPEN GRAPH DATA-->
+    <meta property="og:title" content="The Morning Monarch">
+    <meta property="og:image" content="cat_fbmeta.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!--CSS-->
+    <style>
+        html {
+            margin:0;
+            padding:0;
+        }
+        body {
+            background-color:#677652;
+            width:100vw;
+            margin:16.666vh 0;
+            padding:0;
+        }
+        #composite {
+            margin:0;
+            text-align:center;
+        }
+        #composite img {
+            width:0vw;
+            position:relative;
+            left:0;
+            margin-top:6.5vw;
+            margin-left:0;
+            margin-right:0;
+            -webkit-transition:all 2s ease;
+            -moz-transition:all 2s ease;
+            -o-transition:all 2s ease;
+            transition:all 2s ease;
+        }
+        #a {
+            z-index:2;
+            margin:0;
+        }
+        #b {
+            z-index:3;
+            top:0.164vw;
+        }
+        #c {
+            z-index:1;
+            top:0.43vw;
+        }
+        #d {
+            z-index:2;
+            top:0.658vw;
+        }
+    </style>
 </head>
 
 <body>
 	<div id="composite">
 		<img id="a" src="cat_yellow.png"><img id="b" src="cat_black.png"><img id="c" src="cat_white.png"><img id="d" src="cat_yellow.png">
 	</div>
+    
+    <!--JAVASCRIPT-->
     <script>
 		var cat = [
 			document.getElementById('a'),
@@ -86,12 +97,9 @@
 			elms[3].style.left = -far + "vw";
 		}
 		function diverge( elms ) {
-			var far = 31.5;
-			var near = 10.5;
 			for( var i=0; i<elms.length; i++ )
 				elms[i].style.left = 0;
 		}
 	</script>
-
 </body>
 </html>
