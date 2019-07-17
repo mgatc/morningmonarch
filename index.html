@@ -26,7 +26,7 @@
         #container {
 			display: flex;
 			flex-flow: row nowrap;
-			justify-content: center; 
+			justify-content: space-evenly; 
 			align-items: center;
 			height: 100vh;
 			width:100vw;
@@ -74,6 +74,7 @@
 			document.getElementById('d')
 		];
 		var flex = document.getElementById('container');
+		var width = 5;
 		
 		window.addEventListener( 'load', function() {
 			init( cat );
@@ -82,9 +83,8 @@
 			}, 2000 );
 		});
 		function init( elms ) {
-			flex.style.justifyContent = "space-evenly";
 			for( var i=0; i<elms.length; i++ ) {
-				elms[i].style.width = "5vw";
+				elms[i].style.width = width+ "vw";
 			}
 		}
 		function converge( elms ) {
