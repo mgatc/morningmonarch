@@ -20,20 +20,22 @@
         body {
             background-color:#677652;
             width:100vw;
-            margin:16.666vh 0;
+            margin:0;
             padding:0;
         }
-        #composite {
+        #container {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center; 
+			align-items: center;
+			height: 100vh;
+			width:100vw;
             margin:0;
-            text-align:center;
         }
-        #composite img {
+        #container img {
             width:0vw;
             position:relative;
             left:0;
-            margin-top:6.5vw;
-            margin-left:0;
-            margin-right:0;
             -webkit-transition:all 2s ease;
             -moz-transition:all 2s ease;
             -o-transition:all 2s ease;
@@ -59,7 +61,7 @@
 </head>
 
 <body>
-	<div id="composite">
+	<div id="container">
 		<img id="a" src="cat_yellow.png"><img id="b" src="cat_black.png"><img id="c" src="cat_white.png"><img id="d" src="cat_yellow.png">
 	</div>
     
@@ -71,6 +73,8 @@
 			document.getElementById('c'),
 			document.getElementById('d')
 		];
+		var flex = document.getElementById('container');
+		
 		window.addEventListener( 'load', function() {
 			init( cat );
 			setTimeout( function() {
@@ -78,15 +82,10 @@
 			}, 2000 );
 		});
 		function init( elms ) {
+			flex.style.justifyContent = "space-evenly";
 			for( var i=0; i<elms.length; i++ ) {
-				addLeftRightMargins( elms[i], 8 );
 				elms[i].style.width = "5vw";
-				elms[i].style.marginTop = "0";
 			}
-		}
-		function addLeftRightMargins( e, size ) {
-			e.style.marginLeft = size + "vw";
-			e.style.marginRight = size + "vw";
 		}
 		function converge( elms ) {
 			var far = 31.5;
